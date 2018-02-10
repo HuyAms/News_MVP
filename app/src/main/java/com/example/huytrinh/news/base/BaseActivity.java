@@ -15,4 +15,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
     }
 
+    protected abstract void initializeDagger();
+
+    protected abstract void initializePresenter();
+
 }

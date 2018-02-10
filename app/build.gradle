@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 
+
 android {
     compileSdkVersion 26
     defaultConfig {
@@ -19,9 +20,10 @@ android {
 }
 
 ext {
-    daggerVersion = 2.2
+    daggerVersion = "2.14.1"
     retrofitVersion = "2.3.0"
     spdVersion = "1.0.4"
+    butterKnifeVersion = "8.8.1"
 }
 
 dependencies {
@@ -40,9 +42,12 @@ dependencies {
     compile "com.squareup.retrofit2:retrofit:${retrofitVersion}"
     compile "com.squareup.retrofit2:converter-gson:${retrofitVersion}"
 
+    //Butter Knife
+    compile "com.jakewharton:butterknife:${butterKnifeVersion}"
+    annotationProcessor "com.jakewharton:butterknife-compiler:${butterKnifeVersion}"
+
     //sdp unit
     compile "com.intuit.sdp:sdp-android:${spdVersion}"
-
 
 
 }
