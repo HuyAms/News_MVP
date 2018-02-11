@@ -13,6 +13,7 @@ public class NewsListPresenter implements NewsListContract.Presenter {
     private NewsListContract.View view;
     private DataManager dataManager;
 
+
     public NewsListPresenter(DataManager dataManager) {
         this.dataManager = dataManager;
     }

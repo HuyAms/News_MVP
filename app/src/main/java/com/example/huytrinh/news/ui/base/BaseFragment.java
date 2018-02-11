@@ -24,10 +24,12 @@ public abstract class BaseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
+        View v = super.onCreateView(inflater, container, savedInstanceState);
+        return v;
     }
 
     private void performDependencyInjection() {
         AndroidSupportInjection.inject(this);
     }
+
 }

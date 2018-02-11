@@ -22,4 +22,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         AndroidInjection.inject(this);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }
