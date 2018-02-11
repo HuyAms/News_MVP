@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ProgressBar;
 
 import com.example.huytrinh.news.R;
 
@@ -19,6 +20,9 @@ public class NewsDetailFragment extends Fragment {
 
     @BindView(R.id.webView)
     WebView browser;
+
+    @BindView(R.id.progressBar)
+    ProgressBar progressBar;
 
     private static final String NEWS_URL = "url";
 
@@ -54,15 +58,17 @@ public class NewsDetailFragment extends Fragment {
 
         browser.getSettings().setLoadsImagesAutomatically(true);
         browser.getSettings().setJavaScriptEnabled(true);
-        browser.setWebViewClient(new MyBrowser());
+        browser.setWebViewClient(new MyBrowser(progressBar));
         browser.loadUrl(url);
         return v;
     }
 
     private class MyBrowser extends WebViewClient {
+        private ProgressBar progressBar;
 
-
-        public MyBrowser() {
+        public MyBrowser(ProgressBar progressBar) {
+            this.progressBar = progressBar;
+            progressBar.setVisibility(View.VISIBLE);
         }
 
         @Override
@@ -72,6 +78,7 @@ public class NewsDetailFragment extends Fragment {
 
         @Override
         public void onPageFinished(WebView view, String url) {
+            progressBar.setVisibility(View.GONE);
         }
     }
 }
