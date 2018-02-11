@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.example.huytrinh.news.R;
 import com.example.huytrinh.news.data.model.MyResponse;
@@ -25,6 +26,9 @@ public class NewsListFragment extends BaseFragment implements NewsListContract.V
 
     @BindView(R.id.recyclerView)
     RecyclerView recyclerListView;
+
+    @BindView(R.id.progressBar)
+    ProgressBar progressBar;
 
     @Inject
     NewsListContract.Presenter presenter;
@@ -74,12 +78,12 @@ public class NewsListFragment extends BaseFragment implements NewsListContract.V
 
     @Override
     public void onShowLoading() {
-
+        progressBar.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void onHideLoading() {
-
+        progressBar.setVisibility(View.GONE);
     }
 
     @Override
