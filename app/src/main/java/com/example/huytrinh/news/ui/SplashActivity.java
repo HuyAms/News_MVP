@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.huytrinh.news.R;
+import com.example.huytrinh.news.ui.mainscreen.MainActivity;
 import com.example.huytrinh.news.util.Constants;
 
 public class SplashActivity extends AppCompatActivity {
