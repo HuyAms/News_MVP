@@ -30,18 +30,25 @@ public class NewsListPresenter implements NewsListContract.Presenter {
 
     @Override
     public void loadNewsList() {
-        view.onShowLoading();
+        if (view != null) {
+            view.onShowLoading();
+        }
+
         dataManager.getNews(new ApiCallback() {
             @Override
             public void onRequestSuccess(MyResponse response) {
-                view.onHideLoading();
-                view.onLoadNewsListSuccess(response);
+                if (view != null) {
+                    view.onHideLoading();
+                    view.onLoadNewsListSuccess(response);
+                }
             }
 
             @Override
             public void onRequestFailure(String errorResponse) {
-                view.onHideLoading();
-                view.onLoadNewsListFailure(errorResponse);
+                if (view != null) {
+                    view.onHideLoading();
+                    view.onLoadNewsListFailure(errorResponse);
+                }
             }
         });
 

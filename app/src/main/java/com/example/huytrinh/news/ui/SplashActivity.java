@@ -7,7 +7,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.huytrinh.news.R;
-import com.example.huytrinh.news.ui.mainscreen.MainActivity;
+import com.example.huytrinh.news.ui.mainscreen.login.LoginActivity;
 import com.example.huytrinh.news.util.Constants;
 
 public class SplashActivity extends AppCompatActivity {
@@ -16,7 +16,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        startActivity(MainActivity.class);
+        startActivity(LoginActivity.class);
     }
 
     private void startActivity(final Class<? extends Activity> token) {
