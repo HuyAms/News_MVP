@@ -1,5 +1,6 @@
 package com.example.huytrinh.news.ui.mainscreen.newslist;
 
+import com.example.huytrinh.news.data.model.MyResponse;
 import com.example.huytrinh.news.ui.base.BasePresenter;
 import com.example.huytrinh.news.ui.base.BaseView;
 
@@ -15,7 +16,7 @@ public interface NewsListContract {
 
         void onHideLoading();
 
-        void onLoadNewsListSuccess();
+        void onLoadNewsListSuccess(MyResponse myResponse);
 
         void onLoadNewsListFailure(String error);
     }

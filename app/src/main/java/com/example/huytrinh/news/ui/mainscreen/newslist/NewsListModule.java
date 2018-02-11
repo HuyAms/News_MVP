@@ -1,5 +1,7 @@
 package com.example.huytrinh.news.ui.mainscreen.newslist;
 
+import com.example.huytrinh.news.data.DataManager;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -11,7 +13,7 @@ import dagger.Provides;
 public class NewsListModule {
 
     @Provides
-    public NewsListContract.Presenter provideNewsListPresenter() {
-        return new NewsListPresenter();
+    public NewsListContract.Presenter provideNewsListPresenter(DataManager dataManager) {
+        return new NewsListPresenter(dataManager);
     }
 }

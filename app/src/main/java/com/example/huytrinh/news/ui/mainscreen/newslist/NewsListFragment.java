@@ -1,11 +1,13 @@
 package com.example.huytrinh.news.ui.mainscreen.newslist;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.huytrinh.news.R;
+import com.example.huytrinh.news.data.model.MyResponse;
 import com.example.huytrinh.news.ui.base.BaseFragment;
 
 import javax.inject.Inject;
@@ -51,12 +53,18 @@ public class NewsListFragment extends BaseFragment implements NewsListContract.V
     }
 
     @Override
-    public void onLoadNewsListSuccess() {
-
+    public void onLoadNewsListSuccess(MyResponse myResponse) {
+        Log.d("abc", "onLoadNewsListSuccess: " + myResponse);
     }
 
     @Override
     public void onLoadNewsListFailure(String error) {
+        Log.d("abc", "onLoadNewsListFailure: " + error);
+    }
 
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        presenter.detachView();
     }
 }
